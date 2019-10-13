@@ -45,6 +45,10 @@ class PID {
   double Kp;
   double Ki;
   double Kd;
+
+  double prev_cte;
+  double prev_cte_valid; // identifier for the first cte
+  double int_cte;
 };
 
 #endif  // PID_H
