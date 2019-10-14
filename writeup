@@ -1,0 +1,14 @@
+A writeup with the following discussions:
+a discussion of the effects of the P, I, D component of the PID algorithm with the implementation and comment if these results are what you expected.
+a discussion on how did you chose the final hyperparameters (P, I, D coefficients). This could be have been done through manual tuning, twiddle, SGD, or something else, or a combination.
+
+
+I used manual tuning to tune the P, I, D params.
+During the initial experiment, I set the Ki = 0, Ki is used to mitigate systematic bias. In the perfect world, this param can be set to 0
+Then I tried to tune Kp,
+    if Kp is too large, the vehicle will oscillate
+    if Kp is too small, the vehicle can not stay in the center of lane when there's a curve road.
+
+At the same time, tune Kd which can mitigate the oscillating effect.
+
+Finally, I tune the Ki. In order to evaluate Ki, the vehicle has to run for a longer time because Ki only takes effect for long distance.
